@@ -123,7 +123,7 @@ The following Prerequisites are needed to use the Revit Plugin:
    git clone https://github.com/kprohaszka/my-first-revit-plugin.git
    ```
 2. Download and Install Revit: 
-   [```Revit Overview```](https://www.autodesk.com/products/revit/overview)
+   [```Revit Overview```](https://www.autodesk.com/products/revit/overview) <br>
 3. Copy addin file to Revit addin directory
    ```
    C:\Program Files\Autodesk\Revit 2022\AddIns
@@ -133,7 +133,7 @@ The following Prerequisites are needed to use the Revit Plugin:
    Run Revit 2022 → Load the Addin → Add-ins tab→ External tools → Run “My-First-Revit-Plugin”
    ```
 
-_Disclaimer: The installation path and Revit version may differ, please double check to copy it to the correct location, based on your paths and Revit version.
+_Disclaimer: The installation path and Revit version may differ, please double check to copy it to the correct location, based on your paths and Revit version._
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
