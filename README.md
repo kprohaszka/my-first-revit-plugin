@@ -124,7 +124,7 @@ The following Prerequisites are needed to use the Revit Plugin:
    ```
 2. Download and Install Revit: 
    [```Revit Overview```](https://www.autodesk.com/products/revit/overview)
-   
+
 3. Copy addin file to Revit addin directory
    ```
    C:\Program Files\Autodesk\Revit 2022\AddIns
@@ -154,10 +154,11 @@ _For more examples, please refer to the [Documentation](https://github.com/kproh
 <!-- ROADMAP -->
 ## 🛫 Roadmap
 
-- [] Learn More About Revit
-- [] Research and Gather Materials on How to Make a Plugin
-    - [] Sort Materials
-- [] Create My First Revit Plugin
+- [x] Learn More About Revit
+- [ ] Research and Gather Materials on How to Make a Plugin
+    - [ ] Sort Materials
+    - [ ] Study Materials
+- [ ] Create My First Revit Plugin
 
 See the [open issues](https://github.com/kprohaszka/my-first-revit-plugin/issues) for a full list of proposed features (and known issues).
 
