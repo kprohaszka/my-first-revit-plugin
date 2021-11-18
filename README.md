@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="700" height="150">
+    <img src="images/logo.png" alt="Logo" width="838" height="288">
   </a>
 
 <h3 align="center">Welcome to My-First-Revit-Plugin 🖐</h3>
