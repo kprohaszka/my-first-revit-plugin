@@ -113,7 +113,7 @@ follow the following steps.
 
 The following Prerequisites are needed to use the Revit Plugin:
 
-* Revit
+* Revit <br>
   [```Revit Overview```](https://www.autodesk.com/products/revit/overview)
 
 ### 💿 Installation
@@ -122,10 +122,8 @@ The following Prerequisites are needed to use the Revit Plugin:
    ```sh
    git clone https://github.com/kprohaszka/my-first-revit-plugin.git
    ```
-
-2. Download and Install Revit
+2. Download and Install Revit <br>
    [```Revit Overview```](https://www.autodesk.com/products/revit/overview)
-
 3. Copy addin file to Revit addin directory
    ```
    C:\Program Files\Autodesk\Revit 2022\AddIns
