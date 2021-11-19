@@ -33,6 +33,12 @@ namespace MyFirstRevitPlugin
             //Pick point
             XYZ point = sel.PickPoint("Please pick a point to place group");
 
+            //See the format of the Coordinates
+            XYZ firstWallCoordinatePair = sel.PickPoint("Please pick the first wall coordinate pair");
+            XYZ secondWallCoordinatePair = sel.PickPoint("Please Pick the second wall coordinate pair");
+            XYZ showFirstWallCoordinatePair = sel.PickPoint($"First Pair of 3D Coordinates {firstWallCoordinatePair.ToString()}");
+            XYZ showSecondWallCoordinatePair = sel.PickPoint($"Second Pair of 3D Coordinates {secondWallCoordinatePair.ToString()}");
+
             //Place the group
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
