@@ -196,7 +196,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## ☎️ Contact
 
-📧 Konrad Prohaszka - **cc.kprohaszka at gmail.com**
+📧 Konrad Prohaszka - **cc.kprohaszka[at]gmail.com**
 
 🔗 Project Link: [https://github.com/kprohaszka/my-first-revit-plugin](https://github.com/kprohaszka/my-first-revit-plugin)
 
