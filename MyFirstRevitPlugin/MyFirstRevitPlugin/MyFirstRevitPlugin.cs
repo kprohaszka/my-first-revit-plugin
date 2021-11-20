@@ -49,6 +49,9 @@ namespace MyFirstRevitPlugin
             XYZ First3DLocationOfWall = new XYZ(doubleXCoordinateValue1, doubleYCoordinateValue1, ZCoordinateValue);
             XYZ Second3DLocationOfWall = new XYZ(doubleXCoordinateValue2, doubleYCoordinateValue2, ZCoordinateValue);
 
+            //Create Line
+            Curve wallLine = Line.CreateBound(First3DLocationOfWall, Second3DLocationOfWall);
+
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
             trans.Commit();
