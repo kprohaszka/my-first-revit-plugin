@@ -38,6 +38,13 @@ namespace MyFirstRevitPlugin
             string XCoordinateString2 = generateWallForm.XCoordinateValue2.ToString();
             string YCoordinateString2 = generateWallForm.YCoordinateValue2.ToString();
 
+            //convert them to their respective types
+            double doubleXCoordinateValue1 = double.Parse(XCoordinateString1);
+            double doubleYCoordinateValue1 = double.Parse(YCoordinateString1);
+
+            double doubleXCoordinateValue2 = double.Parse(XCoordinateString2);
+            double doubleYCoordinateValue2 = double.Parse(YCoordinateString2);
+
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
             trans.Commit();
