@@ -28,6 +28,11 @@ namespace MyFirstRevitPlugin
         public GenerateWallForm()
         {
             InitializeComponent();
+
+            uiapp = commandData.Application;
+            uidoc = uiapp.ActiveUIDocument;
+            app = uiapp.Application;
+            doc = uidoc.Document;
         }
 
         private void InformativeLebel6_Click(object sender, EventArgs e)
