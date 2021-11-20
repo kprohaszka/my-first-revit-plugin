@@ -45,6 +45,10 @@ namespace MyFirstRevitPlugin
             double doubleXCoordinateValue2 = double.Parse(XCoordinateString2);
             double doubleYCoordinateValue2 = double.Parse(YCoordinateString2);
 
+            //Construct XYZ value:
+            XYZ First3DLocationOfWall = new XYZ(doubleXCoordinateValue1, doubleYCoordinateValue1, ZCoordinateValue);
+            XYZ Second3DLocationOfWall = new XYZ(doubleXCoordinateValue2, doubleYCoordinateValue2, ZCoordinateValue);
+
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
             trans.Commit();
