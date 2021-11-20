@@ -15,6 +15,11 @@ namespace MyFirstRevitPlugin
 {
     public partial class GenerateWallForm : System.Windows.Forms.Form
     {
+        private UIApplication uiapp;
+        private UIDocument uidoc;
+        private Autodesk.Revit.ApplicationServices.Application app;
+        private Document doc;
+
         public GenerateWallForm()
         {
             InitializeComponent();
