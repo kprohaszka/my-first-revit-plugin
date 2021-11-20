@@ -25,9 +25,16 @@ namespace MyFirstRevitPlugin
 
             Reference pickedref = null;
 
-            //set up form and ask for user information
+            //set up form and ask for coordinates from the user
             GenerateWallForm generateWallForm = new GenerateWallForm(commandData);
             generateWallForm.ShowDialog();
+
+            //grab string values
+            string XCoordinateString1 = generateWallForm.XCoordinateValue1.ToString();
+            string YCoordinateString1 = generateWallForm.YCoordinateValue1.ToString();
+
+            string XCoordinateString2 = generateWallForm.XCoordinateValue2.ToString();
+            string YCoordinateString2 = generateWallForm.YCoordinateValue2.ToString();
 
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
