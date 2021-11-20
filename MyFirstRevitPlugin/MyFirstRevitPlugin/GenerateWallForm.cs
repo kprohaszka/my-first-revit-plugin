@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -98,7 +99,17 @@ namespace MyFirstRevitPlugin
 
         private void GenerateWallButton_Click(object sender, EventArgs e)
         {
+            XCoordinateValue1 = XCoordinateTextBox1.Text;
+            YCoordinateValue1 = YCoordinateTextBox1.Text;
 
+            XCoordinateValue2 = XCoordinateTextBox2.Text;
+            YCoordinateValue2 = YCoordinateTextBox2.Text;
+
+            GenerateWallButton.DialogResult = DialogResult.OK;
+            Debug.WriteLine("Ok Button Was Clicked.");
+            Close();
+
+            return;
         }
     }
 }
