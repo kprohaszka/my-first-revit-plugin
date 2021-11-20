@@ -18,7 +18,11 @@ namespace MyFirstRevitPlugin
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            //Place the group
+            //Get application and document objects
+            UIApplication uiapp = commandData.Application;
+            UIDocument uidoc = uiapp.ActiveUIDocument;
+            Document doc = uiapp.ActiveUIDocument.Document;
+
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
             trans.Commit();
