@@ -20,6 +20,11 @@ namespace MyFirstRevitPlugin
         private Autodesk.Revit.ApplicationServices.Application app;
         private Document doc;
 
+        public string XCoordinateValue1;
+        public string YCoordinateValue1;
+        public string XCoordinateValue2;
+        public string YCoordinateValue2;
+
         public GenerateWallForm()
         {
             InitializeComponent();
