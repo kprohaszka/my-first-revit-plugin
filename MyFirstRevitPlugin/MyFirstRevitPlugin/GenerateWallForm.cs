@@ -25,7 +25,7 @@ namespace MyFirstRevitPlugin
         public string XCoordinateValue2;
         public string YCoordinateValue2;
 
-        public GenerateWallForm()
+        public GenerateWallForm(ExternalCommandData commandData)
         {
             InitializeComponent();
 
@@ -92,7 +92,8 @@ namespace MyFirstRevitPlugin
 
         private void ActionCancelButton_Click(object sender, EventArgs e)
         {
-
+            CancelButton.DialogResult = DialogResult.Cancel;
+            Debug.WriteLine("Cancel Button Was Clicked");
         }
 
         private void GenerateWallButton_Click(object sender, EventArgs e)
