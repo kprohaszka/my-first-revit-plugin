@@ -82,7 +82,7 @@ namespace MyFirstRevitPlugin
             // 
             this.XCoordinateLabel.AutoSize = true;
             this.XCoordinateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XCoordinateLabel.Location = new System.Drawing.Point(238, 102);
+            this.XCoordinateLabel.Location = new System.Drawing.Point(298, 102);
             this.XCoordinateLabel.Name = "XCoordinateLabel";
             this.XCoordinateLabel.Size = new System.Drawing.Size(115, 22);
             this.XCoordinateLabel.TabIndex = 3;
@@ -93,7 +93,7 @@ namespace MyFirstRevitPlugin
             // 
             this.YCoordinateLabel.AutoSize = true;
             this.YCoordinateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YCoordinateLabel.Location = new System.Drawing.Point(439, 102);
+            this.YCoordinateLabel.Location = new System.Drawing.Point(443, 102);
             this.YCoordinateLabel.Name = "YCoordinateLabel";
             this.YCoordinateLabel.Size = new System.Drawing.Size(115, 22);
             this.YCoordinateLabel.TabIndex = 4;
@@ -102,33 +102,33 @@ namespace MyFirstRevitPlugin
             // 
             // XCoordinateTextBox1
             // 
-            this.XCoordinateTextBox1.Location = new System.Drawing.Point(242, 142);
+            this.XCoordinateTextBox1.Location = new System.Drawing.Point(302, 142);
             this.XCoordinateTextBox1.Name = "XCoordinateTextBox1";
-            this.XCoordinateTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.XCoordinateTextBox1.Size = new System.Drawing.Size(111, 20);
             this.XCoordinateTextBox1.TabIndex = 5;
             this.XCoordinateTextBox1.TextChanged += new System.EventHandler(this.XCoordinateTextBox1_TextChanged);
             // 
             // XCoordinateTextBox2
             // 
-            this.XCoordinateTextBox2.Location = new System.Drawing.Point(242, 195);
+            this.XCoordinateTextBox2.Location = new System.Drawing.Point(302, 169);
             this.XCoordinateTextBox2.Name = "XCoordinateTextBox2";
-            this.XCoordinateTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.XCoordinateTextBox2.Size = new System.Drawing.Size(111, 20);
             this.XCoordinateTextBox2.TabIndex = 6;
             this.XCoordinateTextBox2.TextChanged += new System.EventHandler(this.XCoordinateTextBox2_TextChanged);
             // 
             // YCoordinateTextBox1
             // 
-            this.YCoordinateTextBox1.Location = new System.Drawing.Point(443, 142);
+            this.YCoordinateTextBox1.Location = new System.Drawing.Point(447, 142);
             this.YCoordinateTextBox1.Name = "YCoordinateTextBox1";
-            this.YCoordinateTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.YCoordinateTextBox1.Size = new System.Drawing.Size(111, 20);
             this.YCoordinateTextBox1.TabIndex = 7;
             this.YCoordinateTextBox1.TextChanged += new System.EventHandler(this.YCoordinateTextBox1_TextChanged);
             // 
             // YCoordinateTextBox2
             // 
-            this.YCoordinateTextBox2.Location = new System.Drawing.Point(443, 195);
+            this.YCoordinateTextBox2.Location = new System.Drawing.Point(447, 168);
             this.YCoordinateTextBox2.Name = "YCoordinateTextBox2";
-            this.YCoordinateTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.YCoordinateTextBox2.Size = new System.Drawing.Size(111, 20);
             this.YCoordinateTextBox2.TabIndex = 8;
             this.YCoordinateTextBox2.TextChanged += new System.EventHandler(this.YCoordinateTextBox2_TextChanged);
             // 
@@ -169,7 +169,7 @@ namespace MyFirstRevitPlugin
             // 
             this.InformativeLabel5.AutoSize = true;
             this.InformativeLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InformativeLabel5.Location = new System.Drawing.Point(61, 142);
+            this.InformativeLabel5.Location = new System.Drawing.Point(132, 142);
             this.InformativeLabel5.Name = "InformativeLabel5";
             this.InformativeLabel5.Size = new System.Drawing.Size(141, 17);
             this.InformativeLabel5.TabIndex = 12;
@@ -180,7 +180,7 @@ namespace MyFirstRevitPlugin
             this.InformativeLebel6.AutoSize = true;
             this.InformativeLebel6.Cursor = System.Windows.Forms.Cursors.Default;
             this.InformativeLebel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InformativeLebel6.Location = new System.Drawing.Point(61, 195);
+            this.InformativeLebel6.Location = new System.Drawing.Point(132, 169);
             this.InformativeLebel6.Name = "InformativeLebel6";
             this.InformativeLebel6.Size = new System.Drawing.Size(162, 17);
             this.InformativeLebel6.TabIndex = 13;
