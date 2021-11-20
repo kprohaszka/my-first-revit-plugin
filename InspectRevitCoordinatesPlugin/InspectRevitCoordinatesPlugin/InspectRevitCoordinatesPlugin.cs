@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,12 +27,30 @@ namespace InspectRevitCoordinatesPlugin
             XYZ secondWallCoordinatePair =
                 sel.PickPoint("Please Pick the second wall coordinate pair");
 
+            WriteCoordinatesToFile(firstWallCoordinatePair.ToString(), secondWallCoordinatePair.ToString());
+
             XYZ showFirstWallCoordinatePair =
                 sel.PickPoint($"First Pair of 3D Coordinates {firstWallCoordinatePair.ToString()}");
             XYZ showSecondWallCoordinatePair =
                 sel.PickPoint($"Second Pair of 3D Coordinates {secondWallCoordinatePair.ToString()}");
 
             return Result.Succeeded;
+        }
+
+        public void WriteCoordinatesToFile(string firstWallCoordinatePair, string secondWallCoordinatePair)
+        {
+            string filename = "coordinates.txt";
+            string documentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string revitCoordinatesDirectory = "Revit Coordinates";
+            Directory.CreateDirectory(Path.Combine(documentsFolderPath, revitCoordinatesDirectory));
+            string path = Path.Combine(documentsFolderPath, revitCoordinatesDirectory, filename);
+
+
+            using (StreamWriter textFile = File.AppendText(path))
+            {
+                textFile.WriteLine(firstWallCoordinatePair);
+                textFile.WriteLine(secondWallCoordinatePair);
+            }
         }
     }
 }
