@@ -25,6 +25,10 @@ namespace MyFirstRevitPlugin
 
             Reference pickedref = null;
 
+            //set up form and ask for user information
+            GenerateWallForm generateWallForm = new GenerateWallForm(commandData);
+            generateWallForm.ShowDialog();
+
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
             trans.Commit();
