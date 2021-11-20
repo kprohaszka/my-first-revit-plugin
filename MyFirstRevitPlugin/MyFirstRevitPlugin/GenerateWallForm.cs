@@ -13,7 +13,7 @@ using Autodesk.Revit.UI;
 
 namespace MyFirstRevitPlugin
 {
-    public partial class GenerateWallForm : Form
+    public partial class GenerateWallForm : System.Windows.Forms.Form
     {
         public GenerateWallForm()
         {
