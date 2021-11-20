@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
+
 namespace MyFirstRevitPlugin
 {
     public partial class GenerateWallForm : Form
