@@ -16,8 +16,10 @@ namespace MyFirstRevitPlugin
     [Regeneration(RegenerationOption.Manual)]
     public class MyFirstRevitPlugin : IExternalCommand
     {
+        private const double ZCoordinateValue = 0.000000000;
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
+
             //Get application and document objects
             UIApplication uiapp = commandData.Application;
             UIDocument uidoc = uiapp.ActiveUIDocument;
