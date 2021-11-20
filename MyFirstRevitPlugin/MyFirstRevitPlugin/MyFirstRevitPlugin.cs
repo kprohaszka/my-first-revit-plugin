@@ -53,16 +53,15 @@ namespace MyFirstRevitPlugin
             //Create Line
             Curve wallLine = Line.CreateBound(First3DLocationOfWall, Second3DLocationOfWall);
 
-            //Take level from wall selected
-            //User has to select a wall
-
             //Ask the user to select an element which the program will use to get the levelId
             pickedref = selection.PickObject(ObjectType.Element, "Please select an element to acquire LevelId");
             Element elem = doc.GetElement(pickedref);
             ElementId levelId = elem.LevelId;
 
+            //Create Wall Between the two 3D Coordinates
             Transaction trans = new Transaction(doc);
-            trans.Start("Lab");
+            trans.Start("GenerateWall");
+            Wall wall = Wall.Create(doc, wallLine, levelId, false);
             trans.Commit();
 
             return Result.Succeeded;
