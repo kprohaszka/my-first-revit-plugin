@@ -23,6 +23,8 @@ namespace MyFirstRevitPlugin
             UIDocument uidoc = uiapp.ActiveUIDocument;
             Document doc = uiapp.ActiveUIDocument.Document;
 
+            Reference pickedref = null;
+
             Transaction trans = new Transaction(doc);
             trans.Start("Lab");
             trans.Commit();
