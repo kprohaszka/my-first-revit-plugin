@@ -33,25 +33,25 @@ namespace MyFirstRevitPlugin
             generateWallForm.ShowDialog();
 
             //grab string values
-            string XCoordinateString1 = generateWallForm.XCoordinateValue1.ToString();
-            string YCoordinateString1 = generateWallForm.YCoordinateValue1.ToString();
+            string xCoordinateFromForm1 = generateWallForm.XCoordinateValue1.ToString();
+            string yCoordinateFromForm1 = generateWallForm.YCoordinateValue1.ToString();
 
-            string XCoordinateString2 = generateWallForm.XCoordinateValue2.ToString();
-            string YCoordinateString2 = generateWallForm.YCoordinateValue2.ToString();
+            string xCoordinateFromForm2 = generateWallForm.XCoordinateValue2.ToString();
+            string yCoordinateFromForm2 = generateWallForm.YCoordinateValue2.ToString();
 
             //convert them to their respective types
-            double doubleXCoordinateValue1 = double.Parse(XCoordinateString1);
-            double doubleYCoordinateValue1 = double.Parse(YCoordinateString1);
+            double xCoordinate1 = double.Parse(xCoordinateFromForm1);
+            double yCoordinate1 = double.Parse(yCoordinateFromForm1);
 
-            double doubleXCoordinateValue2 = double.Parse(XCoordinateString2);
-            double doubleYCoordinateValue2 = double.Parse(YCoordinateString2);
+            double xCoordinate2 = double.Parse(xCoordinateFromForm2);
+            double yCoordinate2 = double.Parse(yCoordinateFromForm2);
 
             //Construct XYZ value:
-            XYZ First3DLocationOfWall = new XYZ(doubleXCoordinateValue1, doubleYCoordinateValue1, ZCoordinateValue);
-            XYZ Second3DLocationOfWall = new XYZ(doubleXCoordinateValue2, doubleYCoordinateValue2, ZCoordinateValue);
+            XYZ first3DLocationOfWall = new XYZ(xCoordinate1, yCoordinate1, ZCoordinateValue);
+            XYZ second3DLocationOfWall = new XYZ(xCoordinate2, yCoordinate2, ZCoordinateValue);
 
             //Create Line
-            Curve wallLine = Line.CreateBound(First3DLocationOfWall, Second3DLocationOfWall);
+            Curve wallLine = Line.CreateBound(first3DLocationOfWall, second3DLocationOfWall);
 
             //Ask the user to select an element which the program will use to get the levelId
             pickedref = selection.PickObject(ObjectType.Element, "Please select an element to acquire LevelId");
