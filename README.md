@@ -84,8 +84,13 @@
 
 [![My-First-Revit-Plugin][product-screenshot]](https://github.com/kprohaszka/my-first-revit-plugin)
 
+### Main Plugin - Form:
+
+[!MyFirstPlugin Form](https://github.com/kprohaszka/my-first-revit-plugin/blob/RevitSandboxLearning/images/form.PNG?raw=true)
 ### Main Plugin - Generate Wall:
 
+![MyFirstPlugin Snippet](https://i.postimg.cc/HkNXtzgn/My-First-Plugin-Snippet.png)
+![MyFirstPlugin Gif](https://github.com/kprohaszka/my-first-revit-plugin/blob/edit-readme/images/GenerateWallForm.gif?raw=true)
 
 ### Utility: Inspect Coordinates:
 
