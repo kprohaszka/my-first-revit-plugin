@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+ <AddIn Type="Command">
+       <Name>MyFirstRevitPlugin</Name>
+       <FullClassName>MyFirstRevitPlugin.MyFirstRevitPlugin</FullClassName>
+       <Text>MyFirstRevitPlugin</Text>
+       <Description>Places a wall between two coordinates</Description>
+       <VisibilityMode>AlwaysVisible</VisibilityMode>
+       <Assembly>C:\My User Files\Codecool\Projects\Advanced Module\Week 4\my-first-revit-plugin\MyFirstRevitPlugin\MyFirstRevitPlugin\obj\Debug\MyFirstRevitPlugin.dll</Assembly>
+       <AddInId>66d6d7c0-e03e-41db-86f3-17e6b2ea936c</AddInId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc, www.autodesk.com</VendorDescription>
+ </AddIn>
+</RevitAddIns>
