@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/kprohaszka/my-first-revit-plugin">
     <img src="images/logo.png" alt="Logo" width="838" height="288">
   </a>
 
@@ -38,14 +38,14 @@
   <p align="center">
     👨🏼‍🎓 This is an interesting project to learn more about Revit and its plugins!
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>📄 Explore the docs »</strong></a>
+    <a href="https://github.com/kprohaszka/my-first-revit-plugin"><strong>📄 Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">🔭 View Demo</a>
+    <a href="https://github.com/kprohaszka/my-first-revit-plugin">🔭 View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">🐞 Report Bug</a>
+    <a href="https://github.com/kprohaszka/my-first-revit-plugin/issues">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">💡 Request Feature</a>
+    <a href="https://github.com/kprohaszka/my-first-revit-plugin/issues">💡 Request Feature</a>
   </p>
 </div>
 
@@ -83,6 +83,15 @@
 ## 📚 About The Project
 
 [![My-First-Revit-Plugin][product-screenshot]](https://github.com/kprohaszka/my-first-revit-plugin)
+
+### Main Plugin - Generate Wall:
+
+
+### Utility: Inspect Coordinates:
+
+![Inspect Coordinates Snippet](https://i.postimg.cc/vHgrQdYP/Coordinate-Inspector.png)
+![Inspect Coordinates Snippet2](https://i.postimg.cc/FFnb5K4d/Write-Coordinates-To-File.png)
+![Inspect Coordinates Gif](https://github.com/kprohaszka/my-first-revit-plugin/blob/edit-readme/images/InspectCoordinates.gif?raw=true)
 
 The aim of the following project is to learn more about uncharted territories, unfamiliar technologies and softwares.
 
@@ -155,10 +164,13 @@ _For more examples, please refer to the [Documentation](https://github.com/kproh
 ## 🛫 Roadmap
 
 - [x] Learn More About Revit
-- [ ] Research and Gather Materials on How to Make a Plugin
-    - [ ] Sort Materials
-    - [ ] Study Materials
-- [ ] Create My First Revit Plugin
+- [x] Research and Gather Materials on How to Make a Plugin
+    - [x] Sort Materials
+    - [x] Study Materials
+- [x] Create Coordinate Inspector Helper Addin
+- [x] Create My First Revit Plugin
+- [x] Add function to save coordinates to file (Coordinate Inspector)
+- [] Refactor Code
 
 See the [open issues](https://github.com/kprohaszka/my-first-revit-plugin/issues) for a full list of proposed features (and known issues).
 
@@ -207,12 +219,33 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## 💎 Acknowledgments
 
+### 🌎 Websites and Guides
+
 * [Step-by-Step Guide to Developing your First Revit Plugin](http://aectechy.com/stepbystep-guide-to-your-first-revit-plugin/)
 * [Pushing Revit to the Next Level: An Intro to Revit Plugins with C#](https://www.autodesk.com/autodesk-university/class/Pushing-Revit-Next-Level-Intro-Revit-Plugins-C-2018)
 * [My First Revit Plug-in Overview](https://knowledge.autodesk.com/search-result/caas/simplecontent/content/my-first-revit-plug-overview.html)
 * [Revit: Creating C# Plugins](https://www.linkedin.com/learning/revit-creating-c-sharp-plugins)
 * [MyFirstPlugin](https://thebuildingcoder.typepad.com/files/revit_2013_api_my_first_plug-in_training.pdf)
 * [RevitSoftware](https://www.autodesk.com/products/revit/overview?term=1-YEAR&tab=subscription)
+* [Revit API Forum](https://forums.autodesk.com/t5/revit-api-forum/create-wall-method/td-p/5751457)
+* [Walkthrough: Retrieve Selected Elements](https://knowledge.autodesk.com/ko/support/revit/learn-explore/caas/CloudHelp/cloudhelp/2014/KOR/Revit/files/GUID-C67BE1BC-50D6-403C-8458-61BEBADFC6CE-htm.html)
+* [GUID Generator](https://www.guidgenerator.com/)
+* [Walls, Floors, Ceilings, Roofs and Openings](https://help.autodesk.com/cloudhelp/2018/ENU/Revit-API/Revit_API_Developers_Guide/Revit_Geometric_Elements/Walls_Floors_Ceilings_Roofs_and_Openings.html)
+* [Revit API Developers Guide](https://help.autodesk.com/cloudhelp/2018/ENU/Revit-API/Revit_API_Developers_Guide.html)
+* [Create Method (Document, Curve, ElementId, Boolean)](https://www.revitapidocs.com/2020/4a42066c-bc44-0f99-566c-4e8327bc3bfa.htm)
+* [How to: Write text to a file](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file)
+* [Download .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+### 📽 Videos
+
+* [How to write a plugin for Revit - Coding for AEC Lesson 2](https://www.youtube.com/watch?v=ulvaJP4kjKE)
+* [My First Revit Plug-in: Introduction to Programming](https://www.youtube.com/watch?v=q3x-rne4aLw)
+* [Revit Pure Live #008 - Creating Your First Add-in Using C# with Michael Kilkelly](https://www.youtube.com/watch?v=mHfnsNOEbms)
+* [Revit API - Create Levels - Part 2 Collecting User Input with WinForms](https://www.youtube.com/watch?v=xntoRzK4woA)
+* [Revit API - Create Levels - Part 3 - Putting User Input to Work](https://www.youtube.com/watch?v=9-fA76YlG1M)
+* [01 - Revit API - Plugin Essentials - First steps, basic plugin setup](https://www.youtube.com/watch?v=rv6L0jH5e9I)
+* [Revit API - How to Create Wall Types Programmatically - Part 1](https://www.youtube.com/watch?v=lK5Zv0hfwus)
+* [What is Revit | A BIM Software for Design and Modelling](https://www.youtube.com/watch?v=ZQbP0UBEiag)
+* [What is Revit - BIM Software from Autodesk](https://www.youtube.com/watch?v=_qqT9j0rzuk)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -229,7 +262,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/kprohaszka/my-first-revit-plugin.svg?style=for-the-badge
 [issues-url]: https://github.com/kprohaszka/my-first-revit-plugin/issues
 [license-shield]: https://img.shields.io/github/license/kprohaszka/my-first-revit-plugin.svg?style=for-the-badge
-[license-url]: https://github.com/kprohaszka/my-first-revit-plugin/blob/main/LICENSE.txt
+[license-url]: https://github.com/kprohaszka/my-first-revit-plugin/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/konradprohaszka
 [product-screenshot]: images/screenshot.png
