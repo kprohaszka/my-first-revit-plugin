@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+ <AddIn Type="Command">
+       <Name>InspectRevitCoordinatesPlugin</Name>
+       <FullClassName>InspectRevitCoordinatesPlugin.InspectRevitCoordinatesPlugin</FullClassName>
+       <Text>InspectRevitCoordinatesPlugin</Text>
+       <Description>Asks to select two points, then after two clicks, it returns the 3D coordinates of each</Description>
+       <VisibilityMode>AlwaysVisible</VisibilityMode>
+       <Assembly>C:\My User Files\Codecool\Projects\Advanced Module\Week 4\my-first-revit-plugin\InspectRevitCoordinatesPlugin\InspectRevitCoordinatesPlugin\obj\Debug\InspectRevitCoordinatesPlugin.dll</Assembly>
+       <AddInId>53a3390c-9528-4ecd-b238-9e5ac854863a</AddInId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc, www.autodesk.com</VendorDescription>
+ </AddIn>
+</RevitAddIns>
