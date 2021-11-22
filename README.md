@@ -170,7 +170,7 @@ _For more examples, please refer to the [Documentation](https://github.com/kproh
 - [x] Create Coordinate Inspector Helper Addin
 - [x] Create My First Revit Plugin
 - [x] Add function to save coordinates to file (Coordinate Inspector)
-- [] Refactor Code
+- [ ] Refactor Code
 
 See the [open issues](https://github.com/kprohaszka/my-first-revit-plugin/issues) for a full list of proposed features (and known issues).
 
