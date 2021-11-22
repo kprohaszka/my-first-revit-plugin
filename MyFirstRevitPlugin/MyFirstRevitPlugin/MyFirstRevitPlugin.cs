@@ -43,7 +43,8 @@ namespace MyFirstRevitPlugin
             Curve wallLine = Line.CreateBound(first3DLocationOfWall, second3DLocationOfWall);
 
 
-            pickedref = selection.PickObject(ObjectType.Element, "Please select an element to acquire LevelId");
+            pickedref = selection.PickObject(ObjectType.Element,
+                "Please select an element to acquire LevelId");
             Element elem = doc.GetElement(pickedref);
             ElementId levelId = elem.LevelId;
 
