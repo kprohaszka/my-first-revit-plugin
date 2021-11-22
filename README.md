@@ -81,15 +81,15 @@
 
 <!-- ABOUT THE PROJECT -->
 ## 📚 About The Project
-### Main Plugin - Form:
+### 🧱 Main Plugin - 📋 Form:
 
 ![MyFirstPlugin Form](https://github.com/kprohaszka/my-first-revit-plugin/blob/RevitSandboxLearning/images/form.PNG?raw=true)
-### Main Plugin - Generate Wall:
+### 🧱 Main Plugin - Generate Wall Addin:
 
 ![MyFirstPlugin Snippet](https://i.postimg.cc/HkNXtzgn/My-First-Plugin-Snippet.png)
 ![MyFirstPlugin Gif](https://github.com/kprohaszka/my-first-revit-plugin/blob/edit-readme/images/GenerateWallForm.gif?raw=true)
 
-### Utility: Inspect Coordinates:
+### 📎 Utility: Inspect Coordinates Addin:
 
 ![Inspect Coordinates Snippet](https://i.postimg.cc/vHgrQdYP/Coordinate-Inspector.png)
 ![Inspect Coordinates Snippet2](https://i.postimg.cc/FFnb5K4d/Write-Coordinates-To-File.png)
