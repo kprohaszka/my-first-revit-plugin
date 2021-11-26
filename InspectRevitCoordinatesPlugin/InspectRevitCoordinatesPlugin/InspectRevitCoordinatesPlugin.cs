@@ -18,6 +18,8 @@ namespace InspectRevitCoordinatesPlugin
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
+            try
+            {
             UIApplication uiapp = commandData.Application;
             UIDocument uidoc = uiapp.ActiveUIDocument;
             Selection sel = uidoc.Selection;
@@ -36,7 +38,13 @@ namespace InspectRevitCoordinatesPlugin
                 sel.PickPoint($"Second Pair of 3D Coordinates {secondWallCoordinatePair.ToString()}");
 
             return Result.Succeeded;
-        }
+            }
+            catch (Exception exception)
+            {
+                message = exception.Message;
+                return Result.Failed;
+            }
+}
 
         public void WriteCoordinatesToFile(string firstWallCoordinatePair,
             string secondWallCoordinatePair)
