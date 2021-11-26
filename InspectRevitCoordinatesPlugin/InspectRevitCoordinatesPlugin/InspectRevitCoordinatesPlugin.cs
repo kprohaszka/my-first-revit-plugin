@@ -20,31 +20,34 @@ namespace InspectRevitCoordinatesPlugin
         {
             try
             {
-            UIApplication uiapp = commandData.Application;
-            UIDocument uidoc = uiapp.ActiveUIDocument;
-            Selection sel = uidoc.Selection;
+                UIApplication uiapp = commandData.Application;
+                UIDocument uidoc = uiapp.ActiveUIDocument;
+                Selection selection = uidoc.Selection;
 
-            XYZ firstWallCoordinatePair =
-                sel.PickPoint("Please pick the first wall coordinate pair");
-            XYZ secondWallCoordinatePair =
-                sel.PickPoint("Please Pick the second wall coordinate pair");
+                InspectCoordinates(selection);
 
-            WriteCoordinatesToFile(firstWallCoordinatePair.ToString(),
-                secondWallCoordinatePair.ToString());
-
-            XYZ showFirstWallCoordinatePair =
-                sel.PickPoint($"First Pair of 3D Coordinates {firstWallCoordinatePair.ToString()}");
-            XYZ showSecondWallCoordinatePair =
-                sel.PickPoint($"Second Pair of 3D Coordinates {secondWallCoordinatePair.ToString()}");
-
-            return Result.Succeeded;
+                return Result.Succeeded;
             }
             catch (Exception exception)
             {
                 message = exception.Message;
                 return Result.Failed;
             }
-}
+        }
+
+        public void InspectCoordinates(Selection selection)
+        {
+            XYZ firstWallCoordinatePair =
+                selection.PickPoint("Please pick the first wall coordinate pair");
+            XYZ secondWallCoordinatePair =
+                selection.PickPoint("Please Pick the second wall coordinate pair");
+
+            WriteCoordinatesToFile(firstWallCoordinatePair.ToString(),
+                secondWallCoordinatePair.ToString());
+
+            selection.PickPoint($"First Pair of 3D Coordinates {firstWallCoordinatePair.ToString()}");
+            selection.PickPoint($"Second Pair of 3D Coordinates {secondWallCoordinatePair.ToString()}");
+        }
 
         public void WriteCoordinatesToFile(string firstWallCoordinatePair,
             string secondWallCoordinatePair)
