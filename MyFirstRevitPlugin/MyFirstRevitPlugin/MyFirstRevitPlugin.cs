@@ -2,6 +2,7 @@
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
+using System;
 
 namespace MyFirstRevitPlugin
 {
@@ -18,12 +19,23 @@ namespace MyFirstRevitPlugin
             Document doc = uiapp.ActiveUIDocument.Document;
             Selection selection = uidoc.Selection;
 
-            (XYZ, XYZ) coordinates = GetCoordinatesFromUser(commandData);
+            try
+            {
 
-            GenerateWall(coordinates, selection, doc);
+                (XYZ, XYZ) coordinates = GetCoordinatesFromUser(commandData);
 
-            return Result.Succeeded;
+                GenerateWall(coordinates, selection, doc);
+
+                return Result.Succeeded;
+
+            }
+            catch (Exception exception)
+            {
+                message = exception.Message;
+                return Result.Failed;
+            }
         }
+
 
         public ElementId GetLevelId(Selection selection, Document doc)
         {
