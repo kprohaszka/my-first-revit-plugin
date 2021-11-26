@@ -27,18 +27,19 @@ namespace MyFirstRevitPlugin
             return Result.Succeeded;
         }
 
+        public ElementId GetLevelId(Selection selection, Document doc)
+        {
+            Reference pickedref = selection.PickObject(ObjectType.Element,
+                "Please select an element to acquire LevelId");
+            Element elem = doc.GetElement(pickedref);
+            return elem.LevelId;
+        }
+
         public void GenerateWall((XYZ, XYZ) coordinates, Selection selection, Document doc)
         {
 
             Curve wallLine = Line.CreateBound(coordinates.Item1, coordinates.Item2);
-
-            Reference pickedref = null;
-            pickedref = selection.PickObject(ObjectType.Element,
-                "Please select an element to acquire LevelId");
-            Element elem = doc.GetElement(pickedref);
-            ElementId levelId = elem.LevelId;
-
-
+            ElementId levelId = GetLevelId(selection, doc);
             Transaction trans = new Transaction(doc);
             trans.Start("GenerateWall");
             Wall wall = Wall.Create(doc, wallLine, levelId, false);
