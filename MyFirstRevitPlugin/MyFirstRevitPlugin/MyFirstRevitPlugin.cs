@@ -18,8 +18,6 @@ namespace MyFirstRevitPlugin
             Document doc = uiapp.ActiveUIDocument.Document;
             Selection selection = uidoc.Selection;
 
-
-
             (XYZ, XYZ) coordinates = GetCoordinatesFromUser(commandData);
 
             GenerateWall(coordinates, selection, doc);
