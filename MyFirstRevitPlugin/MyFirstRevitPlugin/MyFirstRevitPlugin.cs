@@ -42,7 +42,7 @@ namespace MyFirstRevitPlugin
             ElementId levelId = GetLevelId(selection, doc);
             Transaction trans = new Transaction(doc);
             trans.Start("GenerateWall");
-            Wall wall = Wall.Create(doc, wallLine, levelId, false);
+            Wall.Create(doc, wallLine, levelId, false);
             trans.Commit();
         }
 
