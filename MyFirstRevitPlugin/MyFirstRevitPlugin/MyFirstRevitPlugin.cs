@@ -20,6 +20,28 @@ namespace MyFirstRevitPlugin
 
             Reference pickedref = null;
 
+            (XYZ, XYZ) coordinates = GetCoordinatesFromUser(commandData);
+
+
+            Curve wallLine = Line.CreateBound(first3DLocationOfWall, second3DLocationOfWall);
+
+
+            pickedref = selection.PickObject(ObjectType.Element,
+                "Please select an element to acquire LevelId");
+            Element elem = doc.GetElement(pickedref);
+            ElementId levelId = elem.LevelId;
+
+
+            Transaction trans = new Transaction(doc);
+            trans.Start("GenerateWall");
+            Wall wall = Wall.Create(doc, wallLine, levelId, false);
+            trans.Commit();
+
+            return Result.Succeeded;
+        }
+
+        public (XYZ, XYZ) GetCoordinatesFromUser(ExternalCommandData commandData)
+        {
             GenerateWallForm generateWallForm = new GenerateWallForm(commandData);
             generateWallForm.ShowDialog();
 
@@ -39,22 +61,7 @@ namespace MyFirstRevitPlugin
             XYZ first3DLocationOfWall = new XYZ(xCoordinate1, yCoordinate1, ZCoordinateValue);
             XYZ second3DLocationOfWall = new XYZ(xCoordinate2, yCoordinate2, ZCoordinateValue);
 
-
-            Curve wallLine = Line.CreateBound(first3DLocationOfWall, second3DLocationOfWall);
-
-
-            pickedref = selection.PickObject(ObjectType.Element,
-                "Please select an element to acquire LevelId");
-            Element elem = doc.GetElement(pickedref);
-            ElementId levelId = elem.LevelId;
-
-
-            Transaction trans = new Transaction(doc);
-            trans.Start("GenerateWall");
-            Wall wall = Wall.Create(doc, wallLine, levelId, false);
-            trans.Commit();
-
-            return Result.Succeeded;
+            return (first3DLocationOfWall, second3DLocationOfWall);
         }
     }
 }
