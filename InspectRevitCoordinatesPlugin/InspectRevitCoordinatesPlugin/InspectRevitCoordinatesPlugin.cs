@@ -18,29 +18,44 @@ namespace InspectRevitCoordinatesPlugin
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            UIApplication uiapp = commandData.Application;
-            UIDocument uidoc = uiapp.ActiveUIDocument;
-            Selection sel = uidoc.Selection;
+            try
+            {
+                UIApplication uiapp = commandData.Application;
+                UIDocument uidoc = uiapp.ActiveUIDocument;
+                Selection selection = uidoc.Selection;
 
-            XYZ firstWallCoordinatePair =
-                sel.PickPoint("Please pick the first wall coordinate pair");
-            XYZ secondWallCoordinatePair =
-                sel.PickPoint("Please Pick the second wall coordinate pair");
+                InspectCoordinates(selection);
 
-            WriteCoordinatesToFile(firstWallCoordinatePair.ToString(), secondWallCoordinatePair.ToString());
-
-            XYZ showFirstWallCoordinatePair =
-                sel.PickPoint($"First Pair of 3D Coordinates {firstWallCoordinatePair.ToString()}");
-            XYZ showSecondWallCoordinatePair =
-                sel.PickPoint($"Second Pair of 3D Coordinates {secondWallCoordinatePair.ToString()}");
-
-            return Result.Succeeded;
+                return Result.Succeeded;
+            }
+            catch (Exception exception)
+            {
+                message = exception.Message;
+                return Result.Failed;
+            }
         }
 
-        public void WriteCoordinatesToFile(string firstWallCoordinatePair, string secondWallCoordinatePair)
+        public void InspectCoordinates(Selection selection)
+        {
+            XYZ firstWallCoordinatePair =
+                selection.PickPoint("Please pick the first wall coordinate pair");
+            XYZ secondWallCoordinatePair =
+                selection.PickPoint("Please Pick the second wall coordinate pair");
+
+            WriteCoordinatesToFile(firstWallCoordinatePair.ToString(),
+                secondWallCoordinatePair.ToString());
+
+            selection.PickPoint($"First Pair of 3D Coordinates {firstWallCoordinatePair.ToString()}");
+            selection.PickPoint($"Second Pair of 3D Coordinates {secondWallCoordinatePair.ToString()}");
+        }
+
+        public void WriteCoordinatesToFile(string firstWallCoordinatePair,
+            string secondWallCoordinatePair)
         {
             string filename = "coordinates.txt";
-            string documentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string documentsFolderPath =
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
             string revitCoordinatesDirectory = "Revit Coordinates";
             Directory.CreateDirectory(Path.Combine(documentsFolderPath, revitCoordinatesDirectory));
             string path = Path.Combine(documentsFolderPath, revitCoordinatesDirectory, filename);
