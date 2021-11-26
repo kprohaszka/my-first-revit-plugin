@@ -2,6 +2,7 @@
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
+using System;
 
 namespace MyFirstRevitPlugin
 {
@@ -18,8 +19,45 @@ namespace MyFirstRevitPlugin
             Document doc = uiapp.ActiveUIDocument.Document;
             Selection selection = uidoc.Selection;
 
-            Reference pickedref = null;
+            try
+            {
 
+                (XYZ, XYZ) coordinates = GetCoordinatesFromUser(commandData);
+
+                GenerateWall(coordinates, selection, doc);
+
+                return Result.Succeeded;
+
+            }
+            catch (Exception exception)
+            {
+                message = exception.Message;
+                return Result.Failed;
+            }
+        }
+
+
+        public ElementId GetLevelId(Selection selection, Document doc)
+        {
+            Reference pickedref = selection.PickObject(ObjectType.Element,
+                "Please select an element to acquire LevelId");
+            Element elem = doc.GetElement(pickedref);
+            return elem.LevelId;
+        }
+
+        public void GenerateWall((XYZ, XYZ) coordinates, Selection selection, Document doc)
+        {
+
+            Curve wallLine = Line.CreateBound(coordinates.Item1, coordinates.Item2);
+            ElementId levelId = GetLevelId(selection, doc);
+            Transaction trans = new Transaction(doc);
+            trans.Start("GenerateWall");
+            Wall.Create(doc, wallLine, levelId, false);
+            trans.Commit();
+        }
+
+        public (XYZ, XYZ) GetCoordinatesFromUser(ExternalCommandData commandData)
+        {
             GenerateWallForm generateWallForm = new GenerateWallForm(commandData);
             generateWallForm.ShowDialog();
 
@@ -39,22 +77,7 @@ namespace MyFirstRevitPlugin
             XYZ first3DLocationOfWall = new XYZ(xCoordinate1, yCoordinate1, ZCoordinateValue);
             XYZ second3DLocationOfWall = new XYZ(xCoordinate2, yCoordinate2, ZCoordinateValue);
 
-
-            Curve wallLine = Line.CreateBound(first3DLocationOfWall, second3DLocationOfWall);
-
-
-            pickedref = selection.PickObject(ObjectType.Element,
-                "Please select an element to acquire LevelId");
-            Element elem = doc.GetElement(pickedref);
-            ElementId levelId = elem.LevelId;
-
-
-            Transaction trans = new Transaction(doc);
-            trans.Start("GenerateWall");
-            Wall wall = Wall.Create(doc, wallLine, levelId, false);
-            trans.Commit();
-
-            return Result.Succeeded;
+            return (first3DLocationOfWall, second3DLocationOfWall);
         }
     }
 }
