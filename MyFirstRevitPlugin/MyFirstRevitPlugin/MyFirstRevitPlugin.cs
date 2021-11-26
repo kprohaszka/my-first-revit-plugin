@@ -18,14 +18,21 @@ namespace MyFirstRevitPlugin
             Document doc = uiapp.ActiveUIDocument.Document;
             Selection selection = uidoc.Selection;
 
-            Reference pickedref = null;
+
 
             (XYZ, XYZ) coordinates = GetCoordinatesFromUser(commandData);
 
+            GenerateWall(coordinates, selection, doc);
 
-            Curve wallLine = Line.CreateBound(first3DLocationOfWall, second3DLocationOfWall);
+            return Result.Succeeded;
+        }
 
+        public void GenerateWall((XYZ, XYZ) coordinates, Selection selection, Document doc)
+        {
 
+            Curve wallLine = Line.CreateBound(coordinates.Item1, coordinates.Item2);
+
+            Reference pickedref = null;
             pickedref = selection.PickObject(ObjectType.Element,
                 "Please select an element to acquire LevelId");
             Element elem = doc.GetElement(pickedref);
@@ -36,8 +43,6 @@ namespace MyFirstRevitPlugin
             trans.Start("GenerateWall");
             Wall wall = Wall.Create(doc, wallLine, levelId, false);
             trans.Commit();
-
-            return Result.Succeeded;
         }
 
         public (XYZ, XYZ) GetCoordinatesFromUser(ExternalCommandData commandData)
